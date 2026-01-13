@@ -70,7 +70,9 @@
             {{ partial "author.html" (dict "Params" .Params "template" "single") }}
           {{ end }}
 
-          {{ partial "share.html" . }}
+          {{ if not site.Params.hideShareTools }}
+            {{ partial "share.html" . }}
+          {{ end }}
         </div>
       </header>
 
